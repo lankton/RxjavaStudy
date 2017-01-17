@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        subscriber.onNext(a++);
+                        if (!subscriber.isUnsubscribed()) {
+                            subscriber.onNext(a++);
+                        }
                     }
                 });
             }
@@ -72,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        subscriber.onNext(a++);
+                        if (!subscriber.isUnsubscribed()) {
+                            subscriber.onNext(a++);
+                        }
                     }
                 });
             }
